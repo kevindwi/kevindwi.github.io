@@ -12,7 +12,7 @@ jobs:
       - name: Build
         run: make ci
       - name:  Deploy
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         uses: shalzz/zola-deploy-action@master
         env:
           PAGES_BRANCH: gh-pages
