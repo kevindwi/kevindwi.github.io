@@ -1,18 +1,15 @@
-name: Build and deploy GH Pages
-
 on: push
+name: Build and deploy GH Pages
 
 jobs:
   build:
     name: Publish site
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     steps:
-      - name: Checkout main
+      - name: checkout
         uses: actions/checkout@v4
-      - name: Build
-        run: make ci
-      - name:  Deploy
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+      - name: build_and_deploy
         uses: shalzz/zola-deploy-action@master
         env:
           PAGES_BRANCH: gh-pages
