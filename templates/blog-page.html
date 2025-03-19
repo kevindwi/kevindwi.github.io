@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+  {% block content %}
+  <article>
+    <header>
+      <h1>{{ title }}</h1>
+      <span>
+        <br><time datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time>
+      </span>
+      {% if page.extra.image %}
+        <img src="{{ page.extra.image }}" alt="{{ page.title }}">
+      {% endif %}
+    </header>
+
+    {{ page.content | safe }}
+  </article>
+{% endblock content %}

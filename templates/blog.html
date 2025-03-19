@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ section.title }}</h1>
+
+  {% for year, posts in section.pages | sort(attribute="date") | reverse | group_by(attribute="year") %}
+  {% set year_only = year %}
+  <h2 >{{ year_only }}</h2>
+  <!-- <ul class="list-post pages-list">
+  {%- for post in posts %}
+    <li style="margin-bottom: 5px;">
+      {% if post.extra.image %}
+          <img style="width: 100%; max-height: 430px; object-fit: cover; margin-bottom: 5px;" src="{{ post.extra.image }}" alt="Gambar untuk">
+      {% endif %}
+
+      <div style="display: flex; justify-content: space-between;">
+        <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+        <small><time datetime="{{ post.date }}">{{ post.date | date(format="%b %d, %Y") }}</time></small>
+      </div>
+    </li>
+  {% endfor %}
+  </ul> -->
+
+  <ul class="pages-list">
+  {%- for post in posts %}
+    <li>
+      <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+      <small><time datetime="{{ post.date }}">{{ post.date | date(format="%b %d") }}</time></small>
+    </li>
+  {% endfor %}
+  </ul>
+  {%- endfor %}
+
+
+{% endblock content %}
