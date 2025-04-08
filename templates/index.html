@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ section.content | safe }}
+{% set title = config.title %}
+
+<h1 style="font-size: 2em;">
+  <span style="font-family: monospace;">{{ title }}</span>
+</h1>
+
+<article class="home-section">
+  <h2>Latest Posts</h2>
+  {%- set posts_section = get_section(path="blog/_index.md") %}
+  <ul class="pages-list">
+  {%- for post in posts_section.pages | sort(attribute="date") | reverse | slice(end=5) %}
+    <li>
+      <a href="{{ post.permalink | safe }}">{{ post.title }}</a>
+      <small><time datetime="{{ post.date }}">{{ post.date | date(format="%b %d, %Y") }}</time></small>
+    </li>
+  {%- endfor %}
+    <li><a href="{{ posts_section.permalink | safe }}">View All →</a></li>
+  </ul>
+</article>
+
+{% endblock content %}

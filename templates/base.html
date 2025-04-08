@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% if page.title %}
+    {% set title = page.title %}
+    {% elif section.title %}
+    {% set title = section.title %}
+    {% elif config.title %}
+    {% set title = config.title %}
+    {% endif %}
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+    <link rel="stylesheet" href="{{ get_url(path='style.css') }}">
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+
+    {% if title %}<title>{{ title }}</title>{% endif %}
+  </head>
+
+  <body>
+    <div class="container">
+      {%- if config.extra.nav %}
+      <nav class="w-max-screen flex justify-end">
+        <ul class="flex flex-row gap-5">
+        {%- for item in config.extra.nav %}
+          <li>
+          {%- if item.url is matching("https?://") %}
+            <a href="{{ item.url | safe }}">{{ item.name }}</a>
+          {%- else %}
+            {%- set item_url = get_url(path=item.url) %}
+            {%- if current_url and item_url == current_url %}
+            {{ item.name }}
+            {%- else %}
+            <a class="underline" href="{{ item_url | safe }}">{{ item.name }}</a>
+            {% endif %}
+          {%- endif %}
+          </li>
+        {%- endfor %}
+        </ul>
+      </nav>
+      {%- endif %}
+
+      <!-- Main -->
+      <section class="section flex items-center justify-center py-10">
+        <div class="container w-[800px]">{% block content %} {% endblock %}</div>
+      </section>
+
+      <footer style="display: flex; justify-content: center; margin-top: 40px; margin-bottom: 20px;">
+        <p>
+          made with
+          <a target="_blank" rel="noopener" href="https://www.getzola.org">zola</a>
+          by
+          <a target="_blank" rel="noopener" href="https://github.com/kevindwi">kevindwi</a>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
