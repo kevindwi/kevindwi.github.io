@@ -138,6 +138,17 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 </html>
 ```
 
+### C Program
+
+```c
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!");
+  return 0;
+}
+```
+
 ## List Types
 
 ### Ordered List

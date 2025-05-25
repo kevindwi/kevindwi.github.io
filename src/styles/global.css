@@ -1,15 +1,32 @@
 @import "tailwindcss";
 
+@theme {
+    --font-source-code-pro: "Source Code Pro", monospace;
+}
+
 :root {
-  --accent: #2337ff;
-  --gray-light: 229, 233, 240;
-  --accent-dark: #000d8a;
+    --accent: #2337ff;
+    --gray-light: 229, 233, 240;
+    --accent-dark: #000d8a;
 }
 
 body {
-  font-family: "Manrope", sans-serif;
-  color: #2e2e2e;
-  font-weight: 400;
-  line-height: 1.7;
-  padding-right: 20px;
+    font-family: "Manrope", sans-serif;
+    color: #2e2e2e;
+    font-weight: 400;
+    line-height: 1.7;
+    /* padding-right: 20px; */
+}
+
+p {
+    @apply text-black/80 my-5 leading-7 not-first:mt-5;
+}
+
+a {
+    @apply text-black break-words transition-colors;
+}
+
+:where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    @apply relative rounded-sm px-[0.3rem] py-[0.2rem] text-sm;
+    font-family: "Source Code Pro", monospace;
 }

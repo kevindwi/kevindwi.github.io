@@ -8,50 +8,108 @@ import Link from "../components/Link.astro";
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <div class="mx-auto max-w-screen-sm pt-28">
-      <main class="min-h-[80vh]">
-        <h1 class="text-3xl font-bold py-3">🧑‍🚀 Hello, Astronaut!</h1>
-        <p>
-          Welcome to the official <Link href="https://astro.build/">Astro</Link>
-          blog starter template. This template serves as a lightweight, minimally-styled
-          starting point for anyone looking to build a personal website, blog, or
-          portfolio with Astro.
-        </p>
-        <p>
-          This template comes with a few integrations already configured in your
-          <code>astro.config.mjs</code> file. You can customize your setup with
-          <Link href="https://astro.build/integrations">Astro Integrations</Link
-          > to add tools like Tailwind, React, or Vue to your project.
-        </p>
-        <p>Here are a few ideas on how to get started with the template:</p>
-        <ul>
-          <li>Edit this page in <code>src/pages/index.astro</code></li>
-          <li>
-            Edit the site header items in <code
-              >src/components/Header.astro</code
-            >
-          </li>
-          <li>
-            Add your name to the footer in <code
-              >src/components/Footer.astro</code
-            >
-          </li>
-          <li>
-            Check out the included blog posts in <code>src/content/blog/</code>
-          </li>
-          <li>
-            Customize the blog post page layout in <code
-              >src/layouts/BlogPost.astro</code
-            >
-          </li>
-        </ul>
-      </main>
-    </div>
-    <Footer />
-  </body>
+    <head>
+        <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    </head>
+    <body>
+        <Header />
+        <div class="w-[40rem] max-w-[40rem] mx-auto flex justify-center pt-28">
+            <main class="min-h-[60vh] w-full px-6 md:px-0 md:w-auto">
+                <div class="">
+                    <h1 class="text-black text-2xl font-medium">
+                        hi, i'm kevin
+                    </h1>
+                    <p>
+                        I'm a second year student in Electrical Engineering at
+                        Surabaya State University. I'm interested at Signals and
+                        Systems, ML and Deep Learning.
+                    </p>
+                </div>
+                <div class="flex gap-3 mt-8">
+                    <a
+                        class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
+                        href="#"
+                    >
+                        Github
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="size-[14px] stroke-gray-1200"
+                            ><path
+                                d="M18 15V6M18 6H9M18 6L6.25 17.75"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        >
+                    </a>
+                    <a
+                        class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
+                        href="#"
+                    >
+                        Email
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="size-[14px] stroke-gray-1200"
+                            ><path
+                                d="M18 15V6M18 6H9M18 6L6.25 17.75"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        >
+                    </a>
+                    <a
+                        class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
+                        href="#"
+                    >
+                        LinkedIn
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="size-[14px] stroke-gray-1200"
+                            ><path
+                                d="M18 15V6M18 6H9M18 6L6.25 17.75"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        >
+                    </a>
+                    <a
+                        class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
+                        href="#"
+                    >
+                        CV
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            class="size-[14px] stroke-gray-1200"
+                            ><path
+                                d="M18 15V6M18 6H9M18 6L6.25 17.75"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"></path></svg
+                        >
+                    </a>
+                </div>
+            </main>
+        </div>
+
+        <Footer />
+    </body>
 </html>
