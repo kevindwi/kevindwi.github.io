@@ -1,0 +1,29 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+
+interface Props {
+    error: unknown;
+}
+
+const { error } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead
+            title={"500 | Page not found."}
+            description={"Page not found."}
+        />
+    </head>
+    <body>
+        <div class="h-screen flex justify-center items-center">
+            <div class="text-center">
+                <h1 class="text-black text-2xl font-medium">500</h1>
+                <div>
+                    {error instanceof Error ? error.message : "Unknown error"}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
