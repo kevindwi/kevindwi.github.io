@@ -377,50 +377,14 @@ torch.save({
 
 
     Epoch [1/10] → Train Acc: 73.90%, Val Acc: 83.29%
-
-
-
-
     Epoch [2/10] → Train Acc: 85.03%, Val Acc: 86.07%
-
-
-
-
     Epoch [3/10] → Train Acc: 86.91%, Val Acc: 87.15%
-
-
-
-
     Epoch [4/10] → Train Acc: 87.97%, Val Acc: 88.23%
-
-
-
-
     Epoch [5/10] → Train Acc: 88.72%, Val Acc: 88.37%
-
-
-
-
     Epoch [6/10] → Train Acc: 89.28%, Val Acc: 88.85%
-
-
-
-
     Epoch [7/10] → Train Acc: 89.77%, Val Acc: 88.83%
-
-
-
-
     Epoch [8/10] → Train Acc: 90.18%, Val Acc: 89.19%
-
-
-
-
     Epoch [9/10] → Train Acc: 90.49%, Val Acc: 89.49%
-
-
-
-
     Epoch [10/10] → Train Acc: 90.77%, Val Acc: 89.54%
 
 
