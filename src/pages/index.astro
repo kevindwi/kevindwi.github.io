@@ -4,6 +4,13 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Link from "../components/Link.astro";
+
+var link = {
+    github: "https://github.com/kevindwi",
+    email: "mailto:kevindwi356@gmail.com",
+    linkedin: "https://www.linkedin.com/in/kevin-nayotama-b20360315/",
+    cv: "",
+};
 ---
 
 <!doctype html>
@@ -30,7 +37,8 @@ import Link from "../components/Link.astro";
                 <div class="flex flex-wrap gap-2 mt-8">
                     <a
                         class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
-                        href="#"
+                        target="_blank"
+                        href={link["github"]}
                     >
                         Github
                         <svg
@@ -50,7 +58,8 @@ import Link from "../components/Link.astro";
                     </a>
                     <a
                         class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
-                        href="#"
+                        target="_blank"
+                        href={link["email"]}
                     >
                         Email
                         <svg
@@ -70,7 +79,8 @@ import Link from "../components/Link.astro";
                     </a>
                     <a
                         class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
-                        href="#"
+                        target="_blank"
+                        href={link["linkedin"]}
                     >
                         LinkedIn
                         <svg
@@ -90,7 +100,8 @@ import Link from "../components/Link.astro";
                     </a>
                     <a
                         class="flex items-center gap-1 cursor-pointer select-none bg-gray-300 font-medium text-sm py-[6px] px-3 rounded-full transition-colors duration-200 ease-out hover:bg-gray-400"
-                        href="#"
+                        target="_blank"
+                        href={link["cv"]}
                     >
                         CV
                         <svg
