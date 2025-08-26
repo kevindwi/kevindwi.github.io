@@ -19,7 +19,7 @@ body {
 }
 
 p {
-  @apply text-black/80 my-5 leading-7 not-first:mt-5;
+  @apply text-black/80 my-2 leading-7 not-first:mt-2;
 }
 
 /* a {
