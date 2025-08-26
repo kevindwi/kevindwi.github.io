@@ -29,6 +29,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages-${{ github.job }}
           path: ./dist # Or the actual output directory of your Astro build
 
   deploy:
