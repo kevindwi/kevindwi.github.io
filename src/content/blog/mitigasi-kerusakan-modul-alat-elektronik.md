@@ -2,7 +2,7 @@
 title: 'Mitigasi Kerusakan Modul & Alat Elektronik'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Aug 26 2025'
-heroImage: 'https://images.unsplash.com/photo-1676630444903-163fe485c5d1'
+heroImage: '/photo-1676630444903-163fe485c5d1.jpg'
 ---
 
 Jika kalian memiliki modul atau alat-alat elektronik tentu kalian ingin alat elektronik kalian tetap awet dalam waktu yang lama. Maka dari itu kalian perlu mengetahui faktor kerusakan dan bagaimana cara merawatnya agar awet.
