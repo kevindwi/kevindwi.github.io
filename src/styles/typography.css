@@ -127,19 +127,19 @@
     }
 
     thead {
-      @apply border-slate-600/30 border-b;
+      @apply border-slate-200/30 border-b;
     }
 
     th {
-      @apply border px-4 py-2 text-left font-medium [&[align=center]]:text-center [&[align=right]]:text-right;
+      @apply border border-slate-600/20 px-4 py-2 text-left font-medium [&[align=center]]:text-center [&[align=right]]:text-right;
     }
 
     tbody tr {
-      @apply border-slate-600/20 even:bg-slate-600/50 border-b;
+      @apply border-slate-200/20 odd:bg-slate-200/50 border-b;
     }
 
     td {
-      @apply border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
+      @apply border border-slate-600/20 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right;
     }
 
     img,
