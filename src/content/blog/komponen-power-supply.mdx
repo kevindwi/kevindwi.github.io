@@ -1,0 +1,41 @@
+---
+title: 'Komponen Power Supply - Belajar Dasar Elektronika'
+description: ''
+pubDate: 'Aug 30 2025'
+heroImage: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvO6as4v1w92mA4W0jACJ0g2DucyppFjAdjCGlaVa94mS6yySnCeNzXIcvmJKCR2AR1u6coF3T2LqeMU-1embt60xUSeDoPfNXeG2YtkE2UUmKsgOIdgC7eU3k1-lgnhr-YX-3m_dC2gY/s1600/ic+pwm+2005Z.jpg'
+---
+
+### Komponen Dasar yang Ada pada PSU
+Semua PSU, baik model lama maupun baru, biasanya memiliki komponen-komponen utama berikut:
+![](https://moladin.com/blog/wp-content/uploads/2021/05/Fuse-tabung-kaca.jpg)
+- **Fuse atau Sekring**: Berfungsi sebagai pengaman yang akan putus jika terjadi arus berlebih, melindungi komponen lain dari kerusakan.
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIN1WdvNfPaOmJjNGtqznccK-Uk3ea2bB90w&s)
+- **NTC (Negative Temperature Coefficient)**: Komponen ini mengatur arus masuk saat awal menyalakan perangkat, mencegah lonjakan arus.
+![](https://www.flyrobo.in/image/cache/catalog/3300uf-25v-electrolytic-capacitor/3300uf-25v-electrolytic-capacitor-550x550.jpg)
+- **Kapasitor**: Ada yang berbentuk kotak, ada juga Elco (kapasitor elektrolit) besar. Kapasitor berfungsi menyimpan muatan listrik dan meratakan tegangan.
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aVIAgdHICKr6PIqo8OD5fuzDrTzZ8IE-PA&s)
+- **Coil atau Lilitan**: Berbentuk lilitan kawat yang berfungsi sebagai induktor, meratakan arus.
+<div class="flex">
+<img width="45%" src="https://image.made-in-china.com/202f0j00SshoKbajZUuz/Glass-Passivated-Bridge-Rectifiers-25A-50-to-1000-V-GBU2510.webp" alt=""/>
+<img width="45%" src="https://upload.wikimedia.org/wikipedia/commons/1/13/4_diodes_bridge_rectifier.jpg" alt=""/>
+</div>
+- **Dioda Bridge**: Menyearahkan arus AC menjadi DC. Pada PSU modern, dioda bridge sering ditemukan dalam satu komponen. Sedangkan pada model lama, masih menggunakan empat dioda terpisah.
+<img width="45%" src="https://tr.ht-transformer.net/uploads/202011419/ec28-smps-transformer-er28-transformer01258793122.jpg" alt=""/>
+- **Transformator (Trafo)**: Komponen untuk menurunkan tegangan.
+![](https://www.build-electronic-circuits.com/wp-content/uploads/2024/09/opto_inside-1-500x206.png)
+- **Optocoupler**: Komponen yang berfungsi sebagai pemisah sirkuit tegangan tinggi (primer) dan tegangan rendah (sekunder).
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvO6as4v1w92mA4W0jACJ0g2DucyppFjAdjCGlaVa94mS6yySnCeNzXIcvmJKCR2AR1u6coF3T2LqeMU-1embt60xUSeDoPfNXeG2YtkE2UUmKsgOIdgC7eU3k1-lgnhr-YX-3m_dC2gY/s1600/ic+pwm+2005Z.jpg)
+- **Transistor/IC**: Pada PSU model lama, regulator daya sering menggunakan **transistor MOSFET** yang dilengkapi pendingin (_heatsink_) karena mudah panas. PSU model sekarang lebih ringkas karena menggunakan **IC Power** yang punya banyak fungsi dalam satu chip.
+
+### Mengenali Bagian Input, Output, dan Tegangan
+Setiap PSU memiliki **bagian input** dan **bagian output**.
+- **Input**: Bagian ini terhubung ke sumber listrik PLN (220V) yang masih berupa arus AC.
+- **Output**: Bagian ini menyalurkan arus DC dengan tegangan yang sudah disesuaikan ke perangkat.
+
+### Membedakan Sisi Primer dan Sekunder pada PSU
+Rangkaian PSU terbagi menjadi dua area, yaitu **bagian primer** dan **bagian sekunder**.
+
+Bagaimana cara mengetahuinya?
+1. **Garis Pembatas**: Perhatikan garis hitam atau putih yang membelah papan sirkuit. Garis ini menjadi pembatas antara area primer dan sekunder.
+2. **Posisi Trafo**: Kaki-kaki trafo akan tertanam di kedua sisi, sebagian di area primer dan sebagian lagi di area sekunder.
+3. **Ukuran Komponen**: Komponen di area primer umumnya lebih besar karena harus menangani tegangan tinggi.
