@@ -2,7 +2,7 @@
 title: 'Belajar Pemrograman Arduino - Part 1 Fungsi Utama & Tipe Data'
 description: 'Kode di dalam fungsi `setup()` akan dipanggil satu kali saja saat pada awal program. Biasanya fungsi ini digunakan untuk inisialisasi, seperti menetapkan mode pin, memulai komunikasi serial, koneksi ke wifi, dll.'
 pubDate: 'Aug 30 2025'
-heroImage: 'arduino-blink-frame-00.gif'
+heroImage: '/arduino-blink-frame-00.gif'
 ---
 
 Struktur pemrograman arduino mirip sekali dengan c++, dari mulai sintaks dan tipe data. Hanya beberapa fungsi tambahan yang berbeda.
