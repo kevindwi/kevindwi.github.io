@@ -1,7 +1,7 @@
 ---
 title: 'Cara Cek Dioda Zener pada Power Supply SMPS'
 description: 'Dioda Zener adalah jenis dioda khusus yang berfungsi menjaga tegangan tetap stabil pada nilai tertentu.'
-pubDate: 'Sep 06 2025'
+pubDate: 'Sep 04 2025'
 heroImage: '/dioda-zener.png'
 ---
 

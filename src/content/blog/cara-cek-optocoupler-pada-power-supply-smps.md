@@ -1,7 +1,7 @@
 ---
 title: 'Cara Cek Optocoupler pada Power Supply SMPS'
 description: 'Fungsi dari komponen optocoupler bisa bermacam-macam diantaranya sebagai switch atau saklar untuk kontrol tegangan yang menjadi penghubung bagian primer dan sekunder power supply.'
-pubDate: 'Sep 06 2025'
+pubDate: 'Sep 05 2025'
 heroImage: '/cek-optocoupler.png'
 ---
 

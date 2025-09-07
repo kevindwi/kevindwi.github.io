@@ -1,7 +1,7 @@
 ---
 title: 'Cara Cek MOSFET pada Power Supply SMPS'
 description: 'Transistor MOSFET adalah komponen elektronika yang sangat penting, terutama pada modul power supply. Sering disebut Power MOSFET, komponen ini berperan vital dan paling sering mengalami kerusakan karena bebannya yang sangat tinggi. '
-pubDate: 'Sep 06 2025'
+pubDate: 'Sep 05 2025'
 heroImage: '/cek-mosfet.png'
 ---
 

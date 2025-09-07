@@ -1,7 +1,7 @@
 ---
 title: 'Cara Cek IC Power pada Power Supply SMPS'
 description: 'IC Power atau IC PWM adalah komponen yang sangat penting dalam sebuah power supply modern. Fungsinya adalah untuk mengatur dan mengendalikan semua tegangan yang keluar dari PSU.'
-pubDate: 'Sep 06 2025'
+pubDate: 'Sep 05 2025'
 heroImage: '/cek-ic-power.png'
 ---
 

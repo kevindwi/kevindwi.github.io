@@ -1,7 +1,7 @@
 ---
 title: 'Cara Cek Dioda Schottky pada Power Supply SMPS'
 description: 'Dioda Schottky sebenarnya merupakan dua buah dioda yang digabungkan menjadi satu komponen. Dioda Schottky memiliki bentuk fisik yang mirip dengan transistor, yaitu memiliki tiga kaki.'
-pubDate: 'Sep 06 2025'
+pubDate: 'Sep 04 2025'
 heroImage: '/cek-dioda-schottky.png'
 ---
 
