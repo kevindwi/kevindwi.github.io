@@ -1,6 +1,6 @@
 ---
 title: 'Belajar Pemrograman Arduino - Part 6 Fungsi'
-description: ' Function adalah sebuah struktur, Pengelompokan yang mengandung sekelompok pernyataan yang akan dilaksanakan oleh CPU jika nama function tersebut dipanggil untuk dieksekusi, kecuali untuk function utama yaitu int main() yang akan dieksekusi secara otomatis.'
+description: 'Function adalah sebuah struktur, Pengelompokan yang mengandung sekelompok pernyataan yang akan dilaksanakan oleh CPU jika nama function tersebut dipanggil untuk dieksekusi, kecuali untuk function utama yaitu int main() yang akan dieksekusi secara otomatis.'
 pubDate: 'Sep 03 2025'
 heroImage: '/Screenshot from 2025-09-07 16-50-50.png'
 ---
