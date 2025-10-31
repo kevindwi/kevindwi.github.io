@@ -12,6 +12,28 @@ var link = {
   cv: "/CV_Kevin_Dwi_Nayotama.pdf",
   portfolio: "/Portfolio_Kevin_1.pdf",
 };
+
+var pojects = [
+  {
+    title: "Run File Transfer",
+    description:
+      "File transfer app using React and WebRTC that enables direct file transfer between two devices using local Wi-Fi network. The system uses a Socket.IO-based signaling server to create and join rooms, with QR Code support for quick device pairing.",
+    imageURL: "/run-file-transfer.png",
+    redirect: "https://runtransfer.vercel.app",
+  },
+  {
+    title: "Green Energy Landing Page",
+    description: "Fake project",
+    imageURL: "/green-energy.png",
+    redirect: "https://green-energy-blond.vercel.app/",
+  },
+  {
+    title: "Timeless Farm Landing Page",
+    description: "Fake project",
+    imageURL: "/timeless-farm.png",
+    redirect: "https://timeless-farm.vercel.app",
+  },
+];
 ---
 
 <!doctype html>
@@ -148,41 +170,43 @@ var link = {
         <section class="mb-12">
           <h1 class="text-xl font-medium mb-4">Projects</h1>
 
-          <div class="flex flex-col gap-y-3">
-            <img
-              src="/run-file-transfer.png"
-              class="w-full max-h-[400px] object-cover rounded-2xl border border-gray-200"
-            />
-            <div class="flex flex-col gap-y-2">
-              <a
-                target="_blank"
-                href="https://runtransfer.vercel.app"
-                class="flex justify-between items-center hover:text-black/60"
-              >
-                <h1 class="text-xl font-medium">Run File Transfer</h1>
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke="currentColor"
-                    class="size-5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"></path>
-                  </svg>
+          <div class="grid grid-cols-1 gap-6">
+            {
+              pojects.map((project) => (
+                <div class="flex flex-col gap-y-3">
+                  <img
+                    src={project.imageURL}
+                    class="w-full max-h-[400px] object-cover rounded-2xl border border-gray-200"
+                  />
+                  <div class="flex flex-col gap-y-2">
+                    <a
+                      target="_blank"
+                      href={project.redirect}
+                      class="flex justify-between items-center hover:text-black/60"
+                    >
+                      <h1 class="text-xl font-medium">{project.title}</h1>
+                      <div>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="2"
+                          stroke="currentColor"
+                          class="size-5"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                          />
+                        </svg>
+                      </div>
+                    </a>
+                    <span class="text-md">{project.description}</span>
+                  </div>
                 </div>
-              </a>
-              <span class="text-md">
-                File transfer app using React and WebRTC that enables direct
-                file transfer between two devices using local Wi-Fi network. The
-                system uses a Socket.IO-based signaling server to create and
-                join rooms, with QR Code support for quick device pairing.
-              </span>
-            </div>
+              ))
+            }
           </div>
         </section>
       </main>
