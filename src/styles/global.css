@@ -4,29 +4,58 @@
   --font-source-code-pro: "Source Code Pro", monospace;
 }
 
-:root {
-  --accent: #2337ff;
-  --gray-light: 229, 233, 240;
-  --accent-dark: #000d8a;
-}
-
 body {
-  font-family: "Inter", sans-serif;
-  color: #2e2e2e;
+  margin: 0;
+  width: 100%;
+  height: 100%;
   font-weight: 400;
-  line-height: 1.7;
-  /* padding-right: 20px; */
 }
 
-p {
+/*p {
   @apply text-black/80 my-2 leading-7 not-first:mt-2;
-}
-
-/* a {
-    @apply text-black break-words transition-colors;
-} */
+}*/
 
 :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   @apply relative rounded-sm px-[0.3rem] py-[0.2rem] text-sm;
   font-family: "Source Code Pro", monospace;
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media (min-width: 640px) {
+      max-width: 40rem; /* sm */
+    }
+    @media (min-width: 768px) {
+      max-width: 48rem; /* md */
+    }
+    @media (min-width: 1024px) {
+      max-width: 64rem; /* lg */
+    }
+    @media (min-width: 1280px) {
+      max-width: 80rem; /* xl */
+    }
+    @media (min-width: 1536px) {
+      max-width: 96rem; /* 2xl */
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-3.5 py-1.5 text-sm font-medium rounded-full inline-flex gap-1 items-center justify-center tracking-tight;
+  }
+
+  .btn-primary {
+    @apply bg-black text-white hover:bg-black/80;
+  }
+
+  .btn-text {
+    @apply text-black bg-transparent border border-stone-400 hover:bg-black/10;
+  }
 }
