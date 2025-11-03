@@ -2,18 +2,16 @@
 import { SITE_TITLE } from "../consts";
 ---
 
-<header
-  class="w-full text-black bg-white/60 backdrop-blur-md border border-b-gray-200/50 py-3 fixed z-40"
->
-  <nav
-    class="flex items-center justify-between max-w-screen-sm px-6 md:px-0 md:w-auto mx-auto py-2"
-  >
-    <h2 class="font-medium text-lg">
-      <a style="text-decoration: none;" href="/">{SITE_TITLE}</a>
-    </h2>
-    <div class="font-medium text-sm flex gap-x-8">
-      <a style="text-decoration: none;" href="/">Home</a>
-      <a style="text-decoration: none;" href="/blog">Blog</a>
+<header class="fixed left-0 top-0 w-full z-50 backdrop-blur-sm">
+  <div class="py-5">
+    <div class="container">
+      <div class="flex items-center justify-between">
+        <h1>kevindwi</h1>
+        <nav class="flex gap-6 text-sm text-black/60 items-center">
+          <a href="/">Home</a>
+          <a href="/blog">Blog</a>
+        </nav>
+      </div>
     </div>
-  </nav>
+  </div>
 </header>
