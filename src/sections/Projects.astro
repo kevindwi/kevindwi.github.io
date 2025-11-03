@@ -1,0 +1,60 @@
+---
+import ArrowIcon from "../assets/arrow-up-right.svg";
+
+const contents = [
+  {
+    title: "Run File Transfer",
+    description:
+      "File transfer app using React and WebRTC that enables direct file transfer between two devices using local Wi-Fi network. The system uses a Socket.IO-based signaling server to create and join rooms, with QR Code support for quick device pairing.",
+    thumbnail: "https://kevindwi.github.io/run-file-transfer.png",
+    redirect: "https://runtransfer.vercel.app",
+  },
+  {
+    title: "Run File Transfer",
+    description:
+      "File transfer app using React and WebRTC that enables direct file transfer between two devices using local Wi-Fi network. The system uses a Socket.IO-based signaling server to create and join rooms, with QR Code support for quick device pairing.",
+    thumbnail: "https://kevindwi.github.io/green-energy.png",
+    redirect: "https://green-energy-blond.vercel.app/",
+  },
+  {
+    title: "Run File Transfer",
+    description:
+      "File transfer app using React and WebRTC that enables direct file transfer between two devices using local Wi-Fi network. The system uses a Socket.IO-based signaling server to create and join rooms, with QR Code support for quick device pairing.",
+    thumbnail: "https://kevindwi.github.io/timeless-farm.png",
+    redirect: "https://timeless-farm.vercel.app",
+  },
+];
+---
+
+<section class="flex md:justify-center pb-24">
+  <div class="px-4 md:w-md lg:w-2xl">
+    <div>
+      <h1 class="text-xl font-medium tracking-tight">Projects</h1>
+
+      <div class="mt-4">
+        {
+          contents.map((content) => (
+            <div class="mb-8">
+              <img
+                src={content.thumbnail}
+                alt="File tranfer"
+                class="w-full max-h-[230px] lg:max-h-[400px] object-cover border border-gray-200"
+              />
+              <a href={content.redirect} target="_blank">
+                <div class="flex justify-between items-center hover:text-black/60">
+                  <h2 class="text-xl font-medium tracking-tight mt-4">
+                    {content.title}
+                  </h2>
+                  <ArrowIcon class="w-6 h-6" />
+                </div>
+              </a>
+              <p class="text-normal text-black/80 mt-2">
+                {content.description}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

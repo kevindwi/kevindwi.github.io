@@ -1,0 +1,50 @@
+---
+import ArrowIcon from "../assets/arrow-up-right.svg";
+
+var link = {
+  github: "https://github.com/kevindwi",
+  email: "mailto:kevindwi356@gmail.com",
+  linkedin: "https://www.linkedin.com/in/kevindwi",
+  cv: "/CV_Kevin_Dwi_Nayotama.pdf",
+  portfolio: "/Portfolio_Kevin_1.pdf",
+};
+---
+
+<section class="flex justify-center pt-35 md:pt-30 pb-10">
+  <div class="px-4 md:w-md lg:w-2xl">
+    <h1 class="text-2xl font-medium tracking-tight">Hi, I'm Kevin</h1>
+    <p class="text-lg text-black/70 tracking-tight mt-4">
+      I’m an undergraduate in Electrical Engineering at Surabaya State
+      University, passionate about Embedded Systems, the Internet of Things, and
+      Web Development.
+    </p>
+
+    <p class="text-lg text-black/70 tracking-tight mt-4">
+      Currently, I am interested in how to combine embedded systems and AI to
+      solve real-world problems.
+    </p>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      <a target="_blank" href={link["github"]} class="btn btn-text">
+        <span>Github</span>
+        <ArrowIcon />
+      </a>
+      <a target="_blank" href={link["email"]} class="btn btn-text">
+        <span>Email</span>
+        <ArrowIcon />
+      </a>
+      <a target="_blank" href={link["linkedin"]} class="btn btn-text">
+        <span>LinkedIn</span>
+        <ArrowIcon />
+      </a>
+      <a target="_blank" href={link["cv"]} class="btn btn-text">
+        <span>CV</span>
+        <ArrowIcon />
+      </a>
+      <a target="_blank" href={link["portfolio"]} class="btn btn-text">
+        <span>Portfolio</span>
+        <ArrowIcon />
+      </a>
+    </div>
+  </div>
+</section>
