@@ -1,5 +1,13 @@
 ---
 import ArrowIcon from "../../assets/arrow-up-right.svg";
+
+var link = {
+  github: "https://github.com/kevindwi",
+  email: "mailto:kevindwi356@gmail.com",
+  linkedin: "https://www.linkedin.com/in/kevindwi",
+  cv: "/CV_Kevin_Dwi_Nayotama.pdf",
+  portfolio: "/Portfolio_Kevin_1.pdf",
+};
 ---
 
 <section class="flex justify-center bg-white pt-25 md:pt-30 pb-10">
@@ -21,23 +29,23 @@ import ArrowIcon from "../../assets/arrow-up-right.svg";
     </p>
 
     <div class="mt-8 flex flex-wrap gap-2">
-      <a href="#" class="btn btn-text">
+      <a href={link["github"]} target="_blank" class="btn btn-text">
         <span>Github</span>
         <ArrowIcon />
       </a>
-      <a href="#" class="btn btn-text">
+      <a href={link["email"]} target="_blank" class="btn btn-text">
         <span>Email</span>
         <ArrowIcon />
       </a>
-      <a href="#" class="btn btn-text">
+      <a href={link["linkedin"]} target="_blank" class="btn btn-text">
         <span>LinkedIn</span>
         <ArrowIcon />
       </a>
-      <a href="#" class="btn btn-text">
+      <a href={link["cv"]} target="_blank" class="btn btn-text">
         <span>CV</span>
         <ArrowIcon />
       </a>
-      <a href="#" class="btn btn-text">
+      <a href={link["portfolio"]} target="_blank" class="btn btn-text">
         <span>Portfolio</span>
         <ArrowIcon />
       </a>

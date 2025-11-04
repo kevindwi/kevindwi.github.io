@@ -37,9 +37,11 @@ const contents = [
                 loading="lazy"
                 class="h-auto max-w-full rounded-lg"
               />
-              <h2 class="text-lg font-normal text-black tracking-tight mt-2">
-                {content.title}
-              </h2>
+              <a href={content.redirect} target="_blank">
+                <h2 class="text-lg font-normal text-black tracking-tight mt-2 hover:opacity-75 transition-opacity">
+                  {content.title}
+                </h2>
+              </a>
               <p class="text-sm text-black/70">{content.description}</p>
             </div>
           ))
