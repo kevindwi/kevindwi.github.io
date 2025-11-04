@@ -1,0 +1,50 @@
+---
+const contents = [
+  {
+    title: "Run File Transfer",
+    description:
+      "File transfer app using React and WebRTC that enables direct file transfer between two devices using local Wi-Fi network. The system uses a Socket.IO-based signaling server to create and join rooms, with QR Code support for quick device pairing.",
+    thumbnail: "/run-file-transfer.png",
+    redirect: "https://runtransfer.vercel.app",
+  },
+  {
+    title: "Green Energy",
+    description: "Fake project",
+    thumbnail: "/green-energy.jpg",
+    redirect: "https://green-energy-blond.vercel.app/",
+  },
+  {
+    title: "Tmeless Farm",
+    description: "Fake project",
+    thumbnail: "/timeless-farm.jpg",
+    redirect: "https://timeless-farm.vercel.app",
+  },
+];
+---
+
+<section class="flex md:justify-center bg-white pb-12">
+  <div class="container">
+    <div>
+      <h1 class="text-xl font-normal text-black tracking-tight">Projects</h1>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-4">
+        {
+          contents.map((content) => (
+            <div class="mb-12 md:mb-16">
+              <img
+                src={content.thumbnail}
+                alt={content.title}
+                loading="lazy"
+                class="h-auto max-w-full rounded-lg"
+              />
+              <h2 class="text-lg font-normal text-black tracking-tight mt-2">
+                {content.title}
+              </h2>
+              <p class="text-sm text-black/70">{content.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
