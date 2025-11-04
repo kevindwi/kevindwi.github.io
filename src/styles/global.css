@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+* {
+  font-family: "DM Sans", sans-serif;
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media (min-width: 640px) {
+      max-width: 40rem; /* sm */
+    }
+    @media (min-width: 768px) {
+      max-width: 48rem; /* md */
+    }
+    @media (min-width: 1024px) {
+      max-width: 64rem; /* lg */
+    }
+    @media (min-width: 1280px) {
+      max-width: 80rem; /* xl */
+    }
+    @media (min-width: 1536px) {
+      max-width: 96rem; /* 2xl */
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-3.5 py-1.5 text-sm font-medium rounded-full inline-flex gap-1 items-center justify-center tracking-tight;
+  }
+
+  .btn-primary {
+    @apply bg-black text-white;
+  }
+
+  .btn-text {
+    @apply text-black bg-transparent border border-[#1e1e1e] hover:bg-[#1e1e1e]/10 transition ease-in-out;
+  }
+}
