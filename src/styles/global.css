@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
-* {
-  font-family: "DM Sans", sans-serif;
+@theme {
+  --font-display: "DM Sans", sans-serif;
+  --font-nunito: "Nunito Sans", sans-serif;
 }
 
 @layer utilities {
