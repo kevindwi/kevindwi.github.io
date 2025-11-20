@@ -1,0 +1,21 @@
+---
+const { title, description, thumbnail, redirect } = Astro.props;
+---
+
+<div class="mb-12 md:mb-16">
+  <img
+    src={thumbnail}
+    alt={title}
+    loading="lazy"
+    class="h-auto max-w-full rounded-lg"
+  />
+
+  <a href={redirect} target="_blank" rel="noopener noreferrer">
+    <h2
+      class="text-lg font-normal text-black tracking-tight mt-2 hover:opacity-75 transition-opacity"
+    >
+      {title}
+    </h2>
+  </a>
+  <p class="text-sm text-black/70">{description}</p>
+</div>
