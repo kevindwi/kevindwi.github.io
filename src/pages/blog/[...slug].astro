@@ -1,0 +1,51 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+import "../../styles/blog-page-style.css";
+
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post: any) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const { Content, headings } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <Header />
+
+  <main class="flex justify-center font-nunito">
+    <div class="w-full md:w-auto md:max-w-2xl px-6 md:px-0">
+      <div class="pt-18 pb-10">
+        <div class="aspect-video w-full rounded-lg overflow-hidden">
+          <img
+            src={post.data.thumbnail}
+            alt={post.data.title}
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <h1
+          class="text-black scroll-m-20 text-3xl leading-tight font-medium mt-4"
+        >
+          {post.data.title}
+        </h1>
+        <span class="text-black/60 text-sm mt-2">
+          Published on: {post.data.date}
+        </span>
+
+        <div class="prose mt-4 md:mt-8">
+          <Content />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
