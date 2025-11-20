@@ -1,0 +1,54 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a: any, b: any) =>
+    (b.data?.date?.valueOf() || 0) - (a.data?.date?.valueOf() || 0),
+);
+---
+
+<Layout title={"Blog"}>
+  <Header />
+
+  <section class="pt-25 md:pt-30 pb-10">
+    <div class="container">
+      <h1
+        class="text-xl md:text-2xl lg:text-3xl text-black tracking-tight mt-4 max-w-xs md:max-w-xl lg:max-w-4xl"
+      >
+        The lastest blogs and updates
+      </h1>
+
+      <div class="w-full mt-8">
+        <div
+          class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-4"
+        >
+          {
+            posts.map((post: any) => (
+              <div class="mb-8">
+                <div class="aspect-video w-full rounded-lg overflow-hidden">
+                  {post.data.thumbnail && (
+                    <img
+                      src={post.data.thumbnail}
+                      alt={post.data.title}
+                      loading="lazy"
+                      class="w-full h-full object-cover"
+                    />
+                  )}
+                </div>
+                <a href={`/blog/${post.slug}/`}>
+                  <h2 class="text-lg font-normal text-black tracking-tight mt-2 hover:opacity-75 transition-opacity">
+                    {post.data.title}
+                  </h2>
+                </a>
+                <span class="text-sm text-gray-400">{post.data.date}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
