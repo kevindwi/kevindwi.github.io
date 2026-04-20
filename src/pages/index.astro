@@ -10,21 +10,36 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
+	<body class="h-full justify-items-center">
+	  <Header/>
+
+		<main class="w-2xl mt-18">
+  		<div class="mb-4 w-8 h-8">
+   			<div class="w-8 h-8 aspect-square bg-linear-65 from-purple-500 to-pink-500 rounded-lg"></div>
+  		</div>
+
+			<h1 class="text-slate-900 font-medium">Hello, I'm Kevin!</h1>
+			<h2 class="text-slate-600 font-medium">Electrical Engineer Student</h2>
+
+
 			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
+			  Saya adalah mahasiswa Teknik Elektro yang memiliki antusiasme tinggi di bidang otomasi industri dan sistem kendali. Fokus utama saya terletak pada pengembangan sistem yang efisien melalui teknologi PLC dan control systems.
 			</p>
 			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
+			  Selama perjalanan akademik, saya aktif terlibat dalam berbagai proyek riset, pemahaman sistem tenaga listrik, hingga pengalaman magang praktis. Pengalaman-pengalaman tersebut telah mengasah kemampuan saya dalam memecahkan masalah teknis yang kompleks serta beradaptasi dengan dinamika kerja di lapangan.
 			</p>
+
+
+			<div class="my-8">
+			  <h3 class="text-slate-900 font-medium">Contact</h3>
+				<ul class="flex space-x-3 list-none m-0 *:p-0">
+    		  <li><a href="#">Github</a></li>
+    		  <li><a href="#">Email</a></li>
+				  <li><a href="#">CV</a></li>
+				</ul>
+			</div>
+
+
 			<p>Here are a few ideas on how to get started with the template:</p>
 			<ul>
 				<li>Edit this page in <code>src/pages/index.astro</code></li>
