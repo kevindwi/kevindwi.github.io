@@ -1,25 +1,55 @@
 @import "tailwindcss";
 
-@theme inline {
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-source-code-pro);
-}
-
 @theme {
   --spacing: 4.5px;
+  /*--color-gray-950: #252829;
+  --color-gray-900: #3c4142;
+  --color-gray-800: #535a5b;
+  --color-gray-700: #6b7374;
+  --color-gray-600: #828b8c;
+  --color-main: #9aa4a5;
+  --color-gray-400: #b2bcbd;
+  --color-gray-300: #c1caca;
+  --color-gray-200: #d0d7d7;
+  --color-gray-100: #dfe4e4;
+  --color-gray-50: #eef1f1;*/
+
+  --font-display: "Newsreader", serif;
+  --font-serif: "Lora", serif;
+  --font-mono: "Source Code Pro", monospace;
+
+  --color-main: rgb(52, 54, 77);
+  --color-display: rgb(31, 26, 214);
+}
+
+html body {
+  background: rgb(240, 240, 240);
+  color: rgb(52, 54, 77);
 }
 
 @layer components {
+  body {
+    @apply font-serif;
+  }
+
+  h1 {
+    @apply font-display text-3xl text-main leading-7;
+  }
+
+  h2 {
+    @apply font-display text-2xl text-main leading-7;
+  }
+
   p {
-    @apply text-gray-700 my-5 leading-7 not-first:mt-5;
+    @apply font-serif text-base text-main my-5 leading-6 not-first:mt-5;
   }
 
   a {
-    @apply text-gray-700 break-words underline underline-offset-[3px] transition-colors;
+    @apply font-serif text-display italic break-words underline underline-offset-[3px] transition-colors;
   }
 
   ul {
-    @apply ml-6 list-disc [&>li]:mt-2;
+    @apply font-serif ml-6 list-disc [&>li]:mt-2;
   }
 
   ol {
@@ -28,7 +58,7 @@
   }
 
   li {
-    @apply text-gray-700 pl-2 leading-5 [&>p]:my-0;
+    @apply font-serif text-main pl-2 leading-5 [&>p]:my-0;
   }
 
   ul ul,
@@ -40,7 +70,7 @@
 
   :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
     @apply bg-slate-200 relative rounded-sm px-[0.3rem] py-[0.2rem] text-sm;
-    font-family: var(--font-source-code-pro), monospace;
+    font-family: var(--font-mono), monospace;
   }
 
   :where(a code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
@@ -92,48 +122,48 @@
   }
 
   blockquote {
-    @apply [&_*]:text-gray-700 my-6 border-l-2 pl-6;
+    @apply [&_*]:text-main my-6 border-l-2 pl-6;
   }
 
   /* Article style*/
   .prose {
-    @apply text-gray-700 text-base leading-7;
+    @apply text-main text-base leading-7;
     @apply [&>*]:first:mt-0 [&>*]:last:mb-0 [&>section:first-child>*]:mt-0 [&>section:last-child>*]:mb-0;
 
     p {
-      @apply text-gray-700 my-5 leading-7 not-first:mt-5;
+      @apply text-main my-5 leading-7 not-first:mt-5;
     }
 
     h1 {
-      @apply text-gray-800 mt-0 mb-6 scroll-m-20 text-3xl leading-tight font-bold;
+      @apply font-display text-main mt-0 mb-6 scroll-m-20 text-3xl leading-tight font-medium;
     }
 
     h2 {
-      @apply text-gray-800 mt-8 mb-4 scroll-m-20 text-2xl leading-tight font-bold;
+      @apply font-display text-main mt-8 mb-4 scroll-m-20 text-2xl leading-tight font-medium;
     }
 
     h3 {
-      @apply text-gray-800 mt-6 mb-4 scroll-m-20 text-xl leading-snug font-bold;
+      @apply font-display text-main mt-6 mb-4 scroll-m-20 text-xl leading-snug font-medium;
     }
 
     h4 {
-      @apply text-gray-800 mt-6 mb-3 scroll-m-20 text-lg leading-normal font-bold;
+      @apply font-display text-main mt-6 mb-3 scroll-m-20 text-lg leading-normal font-medium;
     }
 
     h5 {
-      @apply text-gray-800 mt-5 mb-3 scroll-m-20 leading-normal font-bold;
+      @apply font-display text-main mt-5 mb-3 scroll-m-20 leading-normal font-medium;
     }
 
     h6 {
-      @apply text-gray-800 mt-5 mb-3 scroll-m-20 leading-normal font-bold;
+      @apply font-display text-main mt-5 mb-3 scroll-m-20 leading-normal font-medium;
     }
 
     a {
-      @apply text-gray-700 break-words underline underline-offset-[3px] transition-colors;
+      @apply text-display break-words underline underline-offset-[3px] transition-colors;
     }
 
     strong {
-      @apply text-gray-700 font-bold;
+      @apply text-main font-semibold;
     }
 
     ul {
@@ -146,7 +176,7 @@
     }
 
     li {
-      @apply text-gray-700 pl-2 leading-5 [&>p]:my-0;
+      @apply text-main pl-2 leading-5 [&>p]:my-0;
     }
 
     ul ul,
@@ -158,7 +188,7 @@
 
     :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
       @apply bg-slate-300/60 relative rounded-sm px-[0.3rem] py-[0.2rem] text-sm;
-      font-family: "Source Code Pro", monospace;
+      font-family: var(--font-mono), monospace;
     }
 
     :where(a code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
@@ -210,7 +240,7 @@
     }
 
     blockquote {
-      @apply [&_*]:text-gray-700 my-6 border-l-2 pl-6;
+      @apply [&_*]:text-main my-6 border-l-2 pl-6;
     }
 
     hr {
@@ -261,7 +291,7 @@
     }
 
     kbd {
-      @apply text-gray-800 bg-slate-200 rounded-sm px-2 py-1 text-xs font-bold;
+      @apply text-main bg-stone-200 rounded-sm px-2 py-1 text-xs font-semibold;
     }
 
     .katex-display {

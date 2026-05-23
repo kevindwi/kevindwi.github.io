@@ -1,16 +1,16 @@
 ---
-import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from "../consts";
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header class="w-full justify-items-center">
-	<nav class="flex justify-between w-2xl mt-5 py-4">
-		<h2 class="font-medium "><a href="/">{SITE_TITLE}</a></h2>
+  <nav class="flex justify-between w-2xl mt-5 py-4">
+    <div class="font-medium"><a href="/">{SITE_TITLE}</a></div>
 
-		<div class="flex gap-6 text-sm">
-		  <HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/posts">Articles</HeaderLink>
-			<HeaderLink href="/projects">Projects</HeaderLink>
-		</div>
-	</nav>
+    <div class="flex gap-6 text-sm">
+      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="/posts">Articles</HeaderLink>
+      <HeaderLink href="/projects">Projects</HeaderLink>
+    </div>
+  </nav>
 </header>
