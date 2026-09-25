@@ -1,0 +1,143 @@
+---
+title: Code Examples
+description: Multiple language tabs and individual code blocks
+---
+
+Berikut contoh blok kode: gabungan beberapa bahasa memakai komponen
+`CodeBlockTabs`, dan blok kode individual per bahasa.
+
+## Kode dengan Banyak Bahasa (Tabs)
+
+Gunakan `CodeBlockTabs` agar pembaca bisa berpindah bahasa:
+
+<CodeBlockTabs defaultValue="cpp">
+  <CodeBlockTabsList>
+    <CodeBlockTabsTrigger value="cpp">C++</CodeBlockTabsTrigger>
+    <CodeBlockTabsTrigger value="js">JavaScript</CodeBlockTabsTrigger>
+    <CodeBlockTabsTrigger value="py">Python</CodeBlockTabsTrigger>
+  </CodeBlockTabsList>
+
+  <CodeBlockTab value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+
+    int main() {
+        std::vector<int> nums = {1, 2, 3, 4, 5};
+        int sum = 0;
+
+        for (int n : nums) {
+            sum += n;
+        }
+
+        std::cout << "Sum: " << sum << std::endl;
+        return 0;
+    }
+    ```
+
+  </CodeBlockTab>
+
+  <CodeBlockTab value="js">
+    ```js
+    const nums = [1, 2, 3, 4, 5];
+    const sum = nums.reduce((acc, n) => acc + n, 0);
+
+    console.log(`Sum: ${sum}`);
+    ```
+
+  </CodeBlockTab>
+
+  <CodeBlockTab value="py">
+    ```py
+    nums = [1, 2, 3, 4, 5]
+    total = sum(nums)
+    print(f"Sum: {total}")
+    ```
+  </CodeBlockTab>
+</CodeBlockTabs>
+
+## Kode Individual per Bahasa
+
+### C++
+
+```cpp title="hello.cpp"
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, Fumadocs!" << std::endl;
+    return 0;
+}
+```
+
+### JavaScript
+
+```js title="fibonacci.js"
+function fibonacci(n) {
+  if (n <= 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(10)); // 55
+```
+
+### Python
+
+```py title="fibonacci.py"
+def fibonacci(n: int) -> int:
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+print(fibonacci(10))  # 55
+```
+
+### Bahasa Lain
+
+```ts title="greet.ts"
+type Name = string;
+
+function greet(name: Name): string {
+  return `Hello, ${name}!`;
+}
+
+export default greet;
+```
+
+```json title="config.json"
+{
+  "name": "fumadocs",
+  "version": "1.0.0",
+  "lang": "en"
+}
+```
+
+```bash title="install.sh"
+#!/bin/bash
+pnpm install
+pnpm dev
+```
+
+```rust title="main.rs"
+fn main() {
+    let nums = vec![1, 2, 3, 4, 5];
+    let sum: i32 = nums.iter().sum();
+    println!("Sum: {sum}");
+}
+```
+
+### HTML + CSS
+
+```html
+<details>
+  <summary>Klik untuk detail</summary>
+  <p>Ini konten yang tersembunyi.</p>
+</details>
+```
+
+```css
+.docs-container {
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 1rem;
+}
+```

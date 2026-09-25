@@ -1,2 +1,4 @@
 allowBuilds:
   esbuild: true
+patchedDependencies:
+  use-sync-external-store@1.6.0: patches/use-sync-external-store@1.6.0.patch

@@ -1,0 +1,125 @@
+---
+title: LaTeX Examples
+description: Basic to intermediate LaTeX with KaTeX
+---
+
+Setiap blok matematika dirender menggunakan KaTeX. Gunakan `$...$` untuk
+inline math dan `$$...$$` untuk block math.
+
+## Inline Math (Dasar)
+
+Ini adalah contoh persamaan linear sederhana: $ax + b = 0$, solusinya
+$x = -\frac{b}{a}$. Notasi pangkat seperti $x^2$ dan subskrip $a_1, a_2$
+juga didukung.
+
+Contoh lain: akar kuadrat $\sqrt{2}$, akar pangkat tiga $\sqrt[3]{x}$,
+serta rantai eksponen $e^{i\pi} + 1 = 0$ (Identitas Euler).
+
+## Block Math (Dasar)
+
+Rumus kuadrat (quadratic formula):
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+Jumlah deret geometri:
+
+$$
+S_n = \sum_{k=0}^{n-1} ar^k = a\,\frac{1 - r^n}{1 - r}, \quad r \neq 1
+$$
+
+## Intermediate
+
+### Matriks
+
+$$
+A = \begin{pmatrix}
+  a_{11} & a_{12} & a_{13} \\
+  a_{21} & a_{22} & a_{23}
+\end{pmatrix}, \qquad
+I_3 = \begin{bmatrix}
+  1 & 0 & 0 \\
+  0 & 1 & 0 \\
+  0 & 0 & 1
+\end{bmatrix}
+$$
+
+### Turunan dan Integral
+
+Turunan fungsi komposisi (aturan rantai):
+
+$$
+\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)
+$$
+
+Integral tentu dan tak tentu:
+
+$$
+\int_0^\infty e^{-x^2}\,dx = \frac{\sqrt{\pi}}{2}, \qquad
+\int \frac{1}{x}\,dx = \ln|x| + C
+$$
+
+### Limit, Fungsi, dan Perbandingan
+
+Definisi limit yang umum digunakan:
+
+$$
+\lim_{x \to 0} \frac{\sin x}{x} = 1, \qquad
+\lim_{x \to \infty} \left(1 + \frac{1}{x}\right)^{x} = e
+$$
+
+Perbandingan trigonometri dalam segitiga:
+
+$$
+\sin^2\theta + \cos^2\theta = 1, \qquad
+\tan\theta = \frac{\sin\theta}{\cos\theta}
+$$
+
+### Logika dan Teori Himpunan
+
+$$
+A \cup B = \{x : x \in A \lor x \in B\}, \qquad
+A \cap B = \{x : x \in A \land x \in B\}
+$$
+
+Implikasi dan ekuivalensi:
+
+$$
+p \implies q \equiv \neg q \implies \neg p, \qquad
+a \iff b
+$$
+
+### Sistem Persamaan (align)
+
+$$
+\begin{aligned}
+  3x + 2y &= 7 \\
+  2x -  y &= 4
+\end{aligned}
+$$
+
+### Fungsi Piecewise
+
+$$
+f(x) = \begin{cases}
+  x^2, & x \ge 0 \\
+  -x,  & x < 0
+\end{cases}
+$$
+
+### Vektor dan Perkalian Titik
+
+$$
+\mathbf{u} \cdot \mathbf{v} = \lVert \mathbf{u} \rVert \lVert \mathbf{v} \rVert \cos\theta
+= u_1v_1 + u_2v_2 + u_3v_3
+$$
+
+### Fungsi dan Panah
+
+$$
+f: \mathbb{R} \to \mathbb{R}, \qquad
+x \mapsto x^2 + 1
+$$
+
+notasi himpunan: $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$.

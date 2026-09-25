@@ -7,5 +7,9 @@ export default defineConfig({
   plugins: [mdx(), tailwindcss(), reactRouter()],
   resolve: {
     tsconfigPaths: true,
+    dedupe: ['react', 'react-dom'],
+  },
+  optimizeDeps: {
+    exclude: ['use-sync-external-store', '@base-ui/react', '@base-ui/utils'],
   },
 });

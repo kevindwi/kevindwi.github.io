@@ -1,4 +1,4 @@
 {
   "title": "Documentation",
-  "pages": ["---Documentation---", "index", "guide", "components", "---API---", "api", "..."]
+  "pages": ["---Documentation---", "index", "guide", "latex", "code", "components", "---API---", "api", "..."]
 }
