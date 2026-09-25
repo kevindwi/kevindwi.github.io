@@ -1,12 +1,12 @@
-import type { Route } from './+types/home';
-import { HomeLayout } from 'fumadocs-ui/layouts/home';
-import { Link } from 'react-router';
-import { baseOptions } from '@/lib/layout.shared';
+import type { Route } from "./+types/home";
+import { HomeLayout } from "fumadocs-ui/layouts/home";
+import { Link } from "react-router";
+import { baseOptions } from "@/lib/layout.shared";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: 'New React Router App' },
-    { name: 'description', content: 'Welcome to React Router!' },
+    { title: "New React Router App" },
+    { name: "description", content: "Welcome to React Router!" },
   ];
 }
 
@@ -18,12 +18,21 @@ export default function Home() {
         <p className="text-fd-muted-foreground mb-4">
           The truly flexible docs framework on React.js.
         </p>
-        <Link
-          className="text-sm bg-fd-primary text-fd-primary-foreground rounded-full font-medium px-4 py-2.5"
-          to="/docs"
-        >
-          Open Docs
-        </Link>
+
+        <div className="flex gap-3">
+          <Link
+            className="text-sm bg-fd-primary text-fd-primary-foreground rounded-full font-medium px-4 py-2.5"
+            to="/docs"
+          >
+            Open Docs
+          </Link>
+          <Link
+            className="text-sm bg-fd-primary text-fd-primary-foreground rounded-full font-medium px-4 py-2.5"
+            to="/blog"
+          >
+            Open Blog
+          </Link>
+        </div>
       </div>
     </HomeLayout>
   );
