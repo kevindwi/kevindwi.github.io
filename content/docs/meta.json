@@ -1,3 +1,4 @@
 {
-  "pages": ["index", "..."]
+  "title": "Documentation",
+  "pages": ["---Documentation---", "index", "guide", "components", "---API---", "api", "..."]
 }
