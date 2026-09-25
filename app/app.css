@@ -1,19 +1,70 @@
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+@source "../node_modules/fumadocs-ui/dist/**/*.js";
 
 @theme {
-    /*--color-fd-primary: hsl(217, 100%, 58%);*/
+  /*--color-fd-background: hsl(0, 0%, 96%);*/
 
-    /* Yellow */
-    --color-fd-primary: hsl(41, 100%, 40%);
+  --color-fd-background: #f5f5f5;
+  --color-fd-foreground: #0a0a0a;
+  --color-fd-muted: #f5f5f5;
+  --color-fd-muted-foreground: #737373;
+  --color-fd-popover: #fafafa;
+  --color-fd-popover-foreground: #272727;
+  --color-fd-card: #f1f1f1;
+  --color-fd-card-foreground: #0a0a0a;
+  --color-fd-border: #cccccc80;
+  --color-fd-primary: #171717;
+  --color-fd-primary-foreground: #fafafa;
+  --color-fd-secondary: #ededed;
+  --color-fd-secondary-foreground: #171717;
+  --color-fd-accent: #d1d1d180;
+  --color-fd-accent-foreground: #171717;
+  --color-fd-ring: #a3a3a3;
+  --color-fd-overlay: #0003;
+
+  --color-brand: #dd7627;
+  --color-brand-foreground: white;
+  --color-brand-secondary: #c6bb58;
+  --color-brand-secondary-foreground: #97890c;
+  --color-brand-200: #ff8c00;
+  --color-landing-foreground: #59592a;
+  --color-landing-foreground-200: #a8a866;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 .dark {
-    /*--color-fd-primary: #a9ceff;*/
+  /*--color-fd-background: hsl(0, 0%, 4%);*/
 
-    /* Yellow */
-    --color-fd-primary: #fff383;
+  --color-fd-background: #121212;
+  --color-fd-foreground: #ebebeb;
+  --color-fd-muted: #212121;
+  --color-fd-muted-foreground: #b3b3b3cc;
+  --color-fd-popover: #1e1e1e;
+  --color-fd-popover-foreground: #dedede;
+  --color-fd-card: #191919;
+  --color-fd-card-foreground: #fafafa;
+  --color-fd-border: #6663;
+  --color-fd-primary: hsl(54, 100%, 76%);
+  --color-fd-primary-foreground: #171717;
+  --color-fd-secondary: #212121;
+  --color-fd-secondary-foreground: #ebebeb;
+  --color-fd-accent: #6868684d;
+  --color-fd-accent-foreground: #e6e6e6;
+  --color-fd-ring: #8c8c8c;
+  --color-fd-overlay: #0003;
+
+  --color-landing-foreground: #e4e2d0;
+  --color-landing-foreground-200: #b7af7e;
+  --color-brand: #fff383;
+  --color-brand-secondary: #fc7744;
+  --color-brand-secondary-foreground: #521700;
+  --color-brand-foreground: black;
+  --color-brand-200: #fff7c8;
 }
 
 html {

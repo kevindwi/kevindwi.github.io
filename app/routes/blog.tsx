@@ -53,9 +53,7 @@ export default function BlogIndex({ loaderData }: Route.ComponentProps) {
                   {post.description}
                 </p>
               )}
-              <p className="mt-auto pt-4 text-xs text-fd-primary">
-                Sun Sep 20 2026
-              </p>
+              <p className="mt-auto pt-4 text-xs text-brand">Sun Sep 20 2026</p>
             </Link>
           ))}
         </div>

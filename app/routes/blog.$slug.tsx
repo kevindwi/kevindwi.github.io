@@ -4,6 +4,8 @@ import { Link, redirect } from "react-router";
 import type { Route } from "./+types/blog.$slug";
 import { blog } from "@/lib/source";
 import browserCollections from "collections/browser";
+import { HomeLayout } from "fumadocs-ui/layouts/home";
+import { baseOptions } from "@/lib/layout.shared";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const page = blog.getPage([params.slug]);
@@ -41,34 +43,29 @@ export function meta({ data }: { data?: Awaited<ReturnType<typeof loader>> }) {
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
   return (
     <>
-      <div className="w-full max-w-[1400px] mx-auto px-4 py-12 rounded-xl border md:px-8">
-        <h1 className="mb-2 text-3xl font-bold">{loaderData.title}</h1>
-        <p className="mb-4 text-fd-muted-foreground">
-          {loaderData.description}
-        </p>
-        <Link to="/blog" className="text-sm underline">
-          ← Back to Blog
-        </Link>
-      </div>
-
-      <article className="w-full max-w-[1400px] mx-auto flex flex-col px-4 py-8">
-        <div className="prose min-w-0 dark:prose-invert">
-          {clientLoader.useContent(loaderData.path)}
-        </div>
-
-        <div className="flex flex-col gap-4 text-sm mt-8 pt-4 border-t border-fd-border">
-          <div>
-            <p className="mb-1 text-fd-muted-foreground">Written by</p>
-            <p className="font-medium">{loaderData.author}</p>
+      <HomeLayout {...baseOptions()}>
+        <article className="flex flex-col mx-auto w-full max-w-[800px] px-4 py-8">
+          <div className="flex flex-row gap-4 text-sm mb-8">
+            <div>
+              <p className="mb-1 text-fd-muted-foreground">Written by</p>
+              <p className="font-medium">{loaderData.author}</p>
+            </div>
+            <div>
+              <p className="mb-1 text-sm text-fd-muted-foreground">At</p>
+              <p className="font-medium">
+                {new Date(loaderData.date).toDateString()}
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="mb-1 text-sm text-fd-muted-foreground">At</p>
-            <p className="font-medium">
-              {new Date(loaderData.date).toDateString()}
-            </p>
+          <h1 className="text-3xl font-semibold mb-4">{loaderData.title}</h1>
+          <p className="text-fd-muted-foreground mb-8">
+            {loaderData.description}
+          </p>
+          <div className="prose min-w-0 flex-1">
+            {clientLoader.useContent(loaderData.path)}
           </div>
-        </div>
-      </article>
+        </article>
+      </HomeLayout>
     </>
   );
 }

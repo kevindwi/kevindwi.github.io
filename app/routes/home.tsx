@@ -21,13 +21,13 @@ export default function Home() {
 
         <div className="flex gap-3">
           <Link
-            className="text-sm bg-fd-primary text-fd-primary-foreground rounded-full font-medium px-4 py-2.5"
+            className="inline-flex justify-center px-4 py-2.5 rounded-full font-medium tracking-tight transition-colors bg-brand text-brand-foreground hover:bg-brand-200 max-sm:text-sm"
             to="/docs"
           >
             Open Docs
           </Link>
           <Link
-            className="text-sm bg-fd-primary text-fd-primary-foreground rounded-full font-medium px-4 py-2.5"
+            className="inline-flex justify-center px-4 py-2.5 rounded-full font-medium tracking-tight transition-colors bg-brand text-brand-foreground hover:bg-brand-200 max-sm:text-sm"
             to="/blog"
           >
             Open Blog
