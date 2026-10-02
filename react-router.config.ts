@@ -6,14 +6,13 @@ import { getPageImagePath } from './app/lib/og';
 const getUrl = createGetUrl('/docs');
 
 export default {
-  ssr: true,
+  ssr: false,
   async prerender({ getStaticPaths }) {
-    const paths: string[] = [...getStaticPaths()];
+    const paths: string[] = [];
     const excluded: string[] = ['/api/search'];
 
-    const baseRoutes = ['/', '/blog', '/docs'];
-    for (const route of baseRoutes) {
-      if (!paths.includes(route)) paths.push(route);
+    for (const path of getStaticPaths()) {
+      if (!excluded.includes(path)) paths.push(path);
     }
 
     for await (const entry of glob('**/*.mdx', { cwd: 'content/docs' })) {
@@ -27,6 +26,6 @@ export default {
       paths.push(`/blog/${slugs.join('/')}`);
     }
 
-    return paths.filter((path) => !excluded.includes(path));
+    return paths;
   },
 } satisfies Config;
