@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 import mdx from 'fumadocs-mdx/vite';
 
 export default defineConfig({
-  base: 'kevindwi.github.io',
+  base: '/',
   plugins: [mdx(), tailwindcss(), reactRouter()],
   resolve: {
     tsconfigPaths: true,

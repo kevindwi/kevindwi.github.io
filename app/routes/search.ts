@@ -7,6 +7,6 @@ const server = createFromSource(source, {
   language: 'english',
 });
 
-export async function loader({ request }: Route.LoaderArgs) {
+export async function clientLoader({ request }: Route.ClientLoaderArgs) {
   return server.GET(request);
 }

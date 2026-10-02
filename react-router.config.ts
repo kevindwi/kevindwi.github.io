@@ -9,7 +9,7 @@ export default {
   ssr: true,
   async prerender({ getStaticPaths }) {
     const paths: string[] = [];
-    const excluded: string[] = ['/api/search'];
+    const excluded: string[] = ['/api/search', '/search', '/llms.txt'];
 
     for (const path of getStaticPaths()) {
       if (!excluded.includes(path)) paths.push(path);
@@ -20,6 +20,11 @@ export default {
 
       paths.push(getUrl(slugs));
       paths.push(getPageImagePath(slugs));
+    }
+
+    for await (const entry of glob('**/*.mdx', { cwd: 'content/blog' })) {
+      const slugs = getSlugs(entry);
+      paths.push(`/blog/${slugs.join('/')}`);
     }
 
     return paths;

@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  use-sync-external-store@1.6.0: 720842f71ce8cb07ab53115201dccde66319e8125a35e786d662ba3cfe5b7a2b
-
 importers:
 
   .:
@@ -3049,7 +3046,7 @@ snapshots:
       '@floating-ui/utils': 0.2.12
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
-      use-sync-external-store: 1.6.0(patch_hash=720842f71ce8cb07ab53115201dccde66319e8125a35e786d662ba3cfe5b7a2b)(react@19.2.8)
+      use-sync-external-store: 1.6.0(react@19.2.8)
     optionalDependencies:
       '@types/react': 19.2.17
 
@@ -3060,7 +3057,7 @@ snapshots:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
       reselect: 5.2.0
-      use-sync-external-store: 1.6.0(patch_hash=720842f71ce8cb07ab53115201dccde66319e8125a35e786d662ba3cfe5b7a2b)(react@19.2.8)
+      use-sync-external-store: 1.6.0(react@19.2.8)
     optionalDependencies:
       '@types/react': 19.2.17
 
@@ -5822,7 +5819,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.17
 
-  use-sync-external-store@1.6.0(patch_hash=720842f71ce8cb07ab53115201dccde66319e8125a35e786d662ba3cfe5b7a2b)(react@19.2.8):
+  use-sync-external-store@1.6.0(react@19.2.8):
     dependencies:
       react: 19.2.8
 
