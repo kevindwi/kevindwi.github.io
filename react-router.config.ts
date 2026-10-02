@@ -9,7 +9,7 @@ export default {
   ssr: true,
   async prerender({ getStaticPaths }) {
     const paths: string[] = [];
-    const excluded: string[] = ['/api/search', '/search', '/llms.txt'];
+    const excluded: string[] = ['/api/search'];
 
     for (const path of getStaticPaths()) {
       if (!excluded.includes(path)) paths.push(path);
@@ -17,7 +17,6 @@ export default {
 
     for await (const entry of glob('**/*.mdx', { cwd: 'content/docs' })) {
       const slugs = getSlugs(entry);
-
       paths.push(getUrl(slugs));
       paths.push(getPageImagePath(slugs));
     }
