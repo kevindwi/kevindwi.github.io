@@ -5,6 +5,7 @@ import { blog } from "@/lib/source";
 import browserCollections from "collections/browser";
 import { HomeLayout } from "fumadocs-ui/layouts/home";
 import { baseOptions } from "@/lib/layout.shared";
+import { formatDate } from "@/lib/shared";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const page = blog.getPage([params.slug]);
@@ -54,9 +55,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
             </div>
             <div>
               <p className="mb-1 text-sm text-fd-muted-foreground">At</p>
-              <p className="font-medium">
-                {new Date(loaderData.date).toDateString()}
-              </p>
+<p className="font-medium">{formatDate(loaderData.date)}</p>
             </div>
           </div>
           <h1 className="text-3xl font-semibold mb-4">{loaderData.title}</h1>

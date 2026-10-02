@@ -3,15 +3,27 @@ import { Link } from "react-router";
 import type { Route } from "./+types/blog";
 import { HomeLayout } from "fumadocs-ui/layouts/home";
 import { baseOptions } from "@/lib/layout.shared";
+import { formatDate, toTimestamp } from "@/lib/shared";
 
 export async function loader() {
-  const posts = blog.getPages().map((post) => ({
-    url: post.url,
-    title: post.data.title,
-    description: post.data.description,
-  }));
+  const posts = blog
+    .getPages()
+    .map((post) => ({
+      url: post.url,
+      title: post.data.title,
+      description: post.data.description,
+      date: post.data.date,
+    }))
+    .sort((a, b) => toTimestamp(b.date) - toTimestamp(a.date));
 
   return { posts };
+}
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Blog" },
+    { name: "description", content: "Latest posts by Kevin Dwi Nayotama." },
+  ];
 }
 
 export default function BlogIndex({ loaderData }: Route.ComponentProps) {
@@ -53,7 +65,9 @@ export default function BlogIndex({ loaderData }: Route.ComponentProps) {
                   {post.description}
                 </p>
               )}
-              <p className="mt-auto pt-4 text-xs text-brand">Sun Sep 20 2026</p>
+              <p className="mt-auto pt-4 text-xs text-brand">
+                {formatDate(post.date)}
+              </p>
             </Link>
           ))}
         </div>
