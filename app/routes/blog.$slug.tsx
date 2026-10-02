@@ -1,6 +1,5 @@
 import { useMDXComponents } from "@/components/mdx";
 import { InlineTOC } from "fumadocs-ui/components/inline-toc";
-import { Link, redirect } from "react-router";
 import type { Route } from "./+types/blog.$slug";
 import { blog } from "@/lib/source";
 import browserCollections from "collections/browser";
@@ -10,7 +9,7 @@ import { baseOptions } from "@/lib/layout.shared";
 export async function loader({ params }: Route.LoaderArgs) {
   const page = blog.getPage([params.slug]);
 
-  if (!page) throw redirect("/not-found");
+  if (!page) throw new Response("Not found", { status: 404 });
 
   return {
     path: page.path,
@@ -32,11 +31,14 @@ const clientLoader = browserCollections.blogPosts.createClientLoader({
   },
 });
 
-export function meta({ data }: { data?: Awaited<ReturnType<typeof loader>> }) {
-  if (!data) return [{ title: "Not Found" }];
+export function meta({ loaderData }: Route.MetaArgs) {
+  if (!loaderData) return [{ title: "Not Found" }];
+
   return [
-    { title: data.title },
-    { name: "description", content: data.description },
+    { title: loaderData.title },
+    ...(loaderData.description
+      ? [{ name: "description" as const, content: loaderData.description }]
+      : []),
   ];
 }
 
@@ -44,7 +46,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <HomeLayout {...baseOptions()}>
-        <article className="flex flex-col mx-auto w-full max-w-[800px] px-4 py-8">
+        <article className="flex flex-col mx-auto w-full max-w-200 px-4 py-8">
           <div className="flex flex-row gap-4 text-sm mb-8">
             <div>
               <p className="mb-1 text-fd-muted-foreground">Written by</p>

@@ -55,7 +55,14 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let stack: string | undefined;
 
   if (isRouteErrorResponse(error)) {
-    if (error.status === 404) return <NotFound />;
+    if (error.status === 404) {
+      return (
+        <>
+          <title>Not Found</title>
+          <NotFound />
+        </>
+      );
+    }
     message = "Error";
     details = error.statusText;
   } else if (import.meta.env.DEV && error && error instanceof Error) {

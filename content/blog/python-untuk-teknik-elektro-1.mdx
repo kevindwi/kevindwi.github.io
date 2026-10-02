@@ -1,0 +1,117 @@
+---
+title: "Python untuk Teknik Elektro | #1 Pengenalan Python, Setup Dasar"
+description: Pengenalan dan Aplikasi Python di Teknik Elektro.
+date: 2026-10-01
+author: Kevin Dwi Nayotama
+---
+
+## 1. Apa itu Python?
+
+Python adalah bahasa pemrograman tingkat tinggi (high-level language), bersifat _interpreted_, dan berorientasi objek (_object-oriented_). Bahasa ini diciptakan oleh **Guido van Rossum** dan pertama kali dirilis pada tahun 1991. Nama "Python" sendiri uniknya bukan diambil dari nama ular, melainkan dari acara komedi BBC favorit sang pencipta, yaitu _Monty Python’s Flying Circus_.
+
+## 2. Kenapa Belajar Python?
+
+Python konsisten berada pada jajaran bahasa pemrograman paling populer di dunia bukan tanpa alasan. Beberapa alasan mengapa Python disukai oleh para pemula sebagai berikut:
+
+1. Kurva belajar yang rendah
+   Bagi seorang pemula di dunia programming, hambatan terbesar saat belajar adalah sintaks yang rumit dan aturan penulisan yang kaku. Python mengeliminasi hambatan itu. Karena sintaksnya yang lebih menyerupai bahasa inggris. Jadi pemula bisa fokus membangun logika penyelesaian masalah daripada menghafalkan sintaks yang rumit.
+2. Ekosistem yang luas
+   Python memiliki ekosistem yang sudah diibekali dengan _standard library_ dan ribuan _library_ buatan komunitas yang siap pakai. Contohnya jika kamu ingin mengolah data dan statistik ada **Pandas** dan **NumPy**, membuat model machine learning ada **Tensorflow** dan **PyTorch**, mau mensimulasikan signal & sistem ada **SciPy**.
+   Kamu tidak perlu membuat semua sendiri dari nol, cukup gunakan library yang sesua dengan kebutuhanmu.
+3. Komunitas yang besar
+   Ketika kamu mengalami error atau stuck saat menulis kode, kemungkinan besar jutaan orang lain sudah pernah mengalami hal yang sama dan menemukan solusinya. Komunitas Python di platform seperti Stack Overflow, GitHub, hingga forum lokal sangat aktif dan ramah pemula, sehingga kamu tidak akan merasa belajar sendirian.
+
+## 3. Python di Bidang Elektronika
+
+Di dunia **Teknik Elektronika, Mekatronika, dan Instrumentasi**, implementasi Python menjadi lebih luas lagi cakupannya. Python telah menjadi alat yang sangat fleksibel untuk banyak bidang.
+
+Meskipun bahasa seperti C atau C++ masih mendominasi pemrograman _low-level_ pada mikrokontroler karena kecepatan eksekusinya, Python mengambil peran penting sebagai **pemroses data, sistem kontrol _high-level_, serta media simulasi**.
+
+![Python untuk integrasi hardware dan sistem robotik. Sumber: Adam Berry / Getty Images](https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQe6PAxlFKEHurXAHGCjo5A7Jj1T0FGONffk0we0HbHhTaaRZn0bayD-aGy-P-_29cnFtiEp_APYc_OpPU)
+
+### 3.1 Robotika
+
+Dalam pengembangan robot modern, Python berperan menghubungkan persepsi sensor dengan aksi mekanis.
+
+- **ROS 2 (Robot Operating System):** Standar industri robotika saat ini mendukung Python secara penuh lewat library `rclpy`. Dosen, peneliti, hingga _engineer_ industri menggunakan Python untuk mengatur _node_ komunikasi antar sensor (LiDAR, kamera, IMU) dan aktuator.
+- **Computer Vision (OpenCV):** Menggunakan pustaka **OpenCV (`cv2`)**, Python memproses _feed_ kamera secara _real-time_ untuk pemrosesan citra, _line following_, deteksi objek, hingga visual-inertial odometry.
+- **MicroPython & Embedded Systems:** Kehadiran papan seperti **Raspberry Pi**, **ESP32**, atau **RP2040** memungkinkan kita menjalankan varian ringan Python (MicroPython/CircuitPython) langsung di dalam _hardware_ untuk membaca sensor I2C/SPI dan mengendalikan pin GPIO.
+
+### 3.2 Simulation & Modeling (Simulasi dan Pemodelan)
+
+Merancang sistem kontrol fisik—seperti mengatur kecepatan motor DC, menyeimbangkan drone, atau menjaga suhu proses industri—memerlukan analisis matematis yang presisi.
+
+- **Pemrosesan Sinyal (`SciPy` & `NumPy`):** Mengolah data mentah dari sensor arus (seperti SCT-013), memfilter _noise_ sinyal (misalnya dengan _low-pass filter_ atau _Kalman Filter_), hingga analisis spektrum frekuensi dengan Fast Fourier Transform (FFT).
+- **Plotting & Visualisasi (`Matplotlib`):** Menampilkan karakteristik komponen, respon sinyal waktu (_step response_), atau grafik daya secara visual dan profesional.
+- **Pemodelan Matematika & Matematika Simbolik (`SymPy`):** Menyelesaikan persamaan diferensial rangkaian RLC, hukum Kirchhoff, atau analisis nodal secara simbolik tanpa perhitungan manual yang rumit.
+- **Otomatisasi Simulasi Rangkaian (PyLTSpice):** Menghubungkan skrip Python dengan _engine_ simulasi SPICE (seperti LTspice) untuk melakukan _parameter sweeping_ atau analisis statistik Monte Carlo secara otomatis.
+
+## 4. Persiapan & Dasar Setup Python
+
+Jika anda belum menginstall Python maka anda perlu menginstall [Python terlebih dahulu](https://www.python.org/downloads/)
+
+### 4.1 Memahami PIP (Package Installer for Python)
+
+PIP adalah alat manajemen paket bawaan Python. Untuk menginstal pustaka eksternal buatan komunitas, kamu cukup menjalankan satu perintah di terminal.
+
+Cara install library baru:
+
+```bash title="bash"
+pip install numpy
+```
+
+Cara melihat library yang terinstal:
+
+```bash title="bash"
+pip list
+```
+
+<Callout title="Analogi Sederhana">
+  Bayangkan Python standar sebagai **restoran**.
+  **PIP** adalah **pelayan**, dan daftar paket di internet (PyPI) adalah **buku menu**.
+  Ketika kamu butuh _library_ tambahan untuk kontrol hardware atau grafik, kamu cukup minta ke PIP: _"Tolong ambilkan saya pustaka NumPy!"_
+</Callout>
+
+### 4.2 Virtual Environment (Isolasi Proyek)
+
+Mengapa _virtual environment_ itu penting?
+
+Bayangkan kamu sedang mengerjakan dua proyek: Proyek A membutuhkan pustaka versi lama, sedangkan Proyek B membutuhkan pustaka versi terbaru. Jika semua diinstal di satu tempat (_global_), proyekmu bisa bentrok dan rusak.
+
+_Virtual environment_ membuat **folder terisolasi** khusus untuk proyek tertentu tanpa mengganggu sistem utama.
+
+Membuat virtual environment baru:
+
+```bash title="bash"
+python -m venv .venv
+```
+
+Mengaktifkan environment:
+
+- **Windows:** `.venv\Scripts\activate`
+- **Linux/macOS:** `source .venv/bin/activate`
+  Menonaktifkan environment:
+
+```bash title="bash"
+deactive
+```
+
+### 4.3 Memilih Editor / IDE (Integrated Development Environment)
+
+### 4.4 Menjalankan Kode Pertama
+
+- Buka IDE (misalnya VS Code) dan buat file baru bernama `main.py`.
+
+- Tuliskan kode berikut:
+
+  ```py title="main.py"
+  # Program Pertama Saya
+  nama = "Python"
+  print(f"Selamat datang di dunia {nama}!")
+  ```
+
+- Buka terminal di folder tersebut dan jalankan perintah:
+
+  ```bash title="bash"
+  python main.py
+  ```
